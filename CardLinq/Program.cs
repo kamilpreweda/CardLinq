@@ -1,4 +1,6 @@
-﻿namespace CardLinq
+﻿using System.Linq;
+
+namespace CardLinq
 {
     internal class Program
     {

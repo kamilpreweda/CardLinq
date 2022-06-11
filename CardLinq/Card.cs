@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace CardLinq
 {
-    public class Card
+    public class Card : IComparable<Card>
     {
         public Values Value { get; private set; }
         public Suits Suit { get; private set; }
         public string Name { get { return $"{Value} {Suit}"; } }
+
+        public int CompareTo(Card other)
+        {
+            return new CardComparerByValue().Compare(this, other);
+        }
 
         public override string ToString()
         {
